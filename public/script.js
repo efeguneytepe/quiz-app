@@ -206,129 +206,6 @@ document.addEventListener('keydown', (e) => {
         });
     }
 });
-// Quiz Soruları
-const quizQuestions = [
-    {
-        id: 1,
-        question: "Türkiye'nin başkenti neresidir?",
-        options: ["İstanbul", "Ankara", "İzmir", "Antalya"],
-        correctAnswer: "Ankara"
-    },
-    {
-        id: 2,
-        question: "En büyük Türk devleti hangisidir?",
-        options: ["Selçuklu", "Osmanlı", "Cumhuriyet", "Göktürk"],
-        correctAnswer: "Osmanlı"
-    },
-    {
-        id: 3,
-        question: "Atatürk'ün doğum yılı kaçtır?",
-        options: ["1881", "1890", "1875", "1899"],
-        correctAnswer: "1881"
-    },
-    {
-        id: 4,
-        question: "Türkiye'nin en uzun nehri hangisidir?",
-        options: ["Kızılırmak", "Fırat", "Dicle", "Sakarya"],
-        correctAnswer: "Kızılırmak"
-    },
-    {
-        id: 5,
-        question: "Hangi renk Türk bayrağının renginde bulunur?",
-        options: ["Yeşil", "Mor", "Kırmızı", "Turuncu"],
-        correctAnswer: "Kırmızı"
-    },
-    {
-        id: 6,
-        question: "Türkiye'nin kaç ili vardır?",
-        options: ["80", "81", "82", "79"],
-        correctAnswer: "81"
-    },
-    {
-        id: 7,
-        question: "Hangisi İstanbul'un bir semtidir?",
-        options: ["Çankaya", "Kadıköy", "Keçiören", "Mamak"],
-        correctAnswer: "Kadıköy"
-    },
-    {
-        id: 8,
-        question: "Türk edebiyatının önemli yazarlarından biri kimdir?",
-        options: ["Orhan Pamuk", "Zülfü Livaneli", "Yaşar Kemal", "Haldun Taner"],
-        correctAnswer: "Orhan Pamuk"
-    },
-    {
-        id: 9,
-        question: "Hangisi Türkiye'nin komşu ülkelerinden biri değildir?",
-        options: ["Suriye", "İran", "Irak", "Almanya"],
-        correctAnswer: "Almanya"
-    },
-    {
-        id: 10,
-        question: "Türkiye'nin para birimi nedir?",
-        options: ["Dolar", "Euro", "Türk Lirası", "Sterlin"],
-        correctAnswer: "Türk Lirası"
-    },
-    {
-        id: 11,
-        question: "Hangisi Türkiye'nin en büyük gölüdür?",
-        options: ["Van Gölü", "Tuz Gölü", "Beyşehir Gölü", "İznik Gölü"],
-        correctAnswer: "Van Gölü"
-    },
-    {
-        id: 12,
-        question: "Türkiye Cumhuriyeti'nin kurucusu kimdir?",
-        options: ["İsmet İnönü", "Mustafa Kemal Atatürk", "Adnan Menderes", "Süleyman Demirel"],
-        correctAnswer: "Mustafa Kemal Atatürk"
-    },
-    {
-        id: 13,
-        question: "Hangisi Türkiye'nin en yüksek dağıdır?",
-        options: ["Uludağ", "Erciyes", "Ağrı Dağı", "Kaçkar"],
-        correctAnswer: "Ağrı Dağı"
-    },
-    {
-        id: 14,
-        question: "Türkiye'nin en çok nüfusa sahip şehri hangisidir?",
-        options: ["Ankara", "İzmir", "İstanbul", "Bursa"],
-        correctAnswer: "İstanbul"
-    },
-    {
-        id: 15,
-        question: "Hangisi Türk mutfağının meşhur tatlılarından biridir?",
-        options: ["Tiramisu", "Baklava", "Cheesecake", "Crème Brûlée"],
-        correctAnswer: "Baklava"
-    },
-    {
-        id: 16,
-        question: "Türkiye'nin kaç yılında Cumhuriyet ilan edildi?",
-        options: ["1923", "1920", "1925", "1930"],
-        correctAnswer: "1923"
-    },
-    {
-        id: 17,
-        question: "Hangisi Türkiye'nin en önemli turizm bölgelerinden biridir?",
-        options: ["Kapadokya", "Çorum", "Kırşehir", "Niğde"],
-        correctAnswer: "Kapadokya"
-    },
-    {
-        id: 18,
-        question: "Türkiye'nin resmi dili nedir?",
-        options: ["Kürtçe", "Arapça", "Türkçe", "Farsça"],
-        correctAnswer: "Türkçe"
-    },
-    {
-        id: 19,
-        question: "Hangisi Türk sporunda dünyaca ünlü bir futbolcudur?",
-        options: ["Hamit Altıntop", "Hakan Şükür", "Arda Turan", "Emre Belözoğlu"],
-        correctAnswer: "Hakan Şükür"
-    },
-    {
-        id: 20,
-        question: "Türkiye'nin en uzun kıyı şeridine sahip olan denizi hangisidir?",
-        options: ["Akdeniz", "Karadeniz", "Ege Denizi", "Marmara Denizi"],
-        correctAnswer: "Karadeniz"
-    }
-];
 
 // DOM Elementleri
 const nameScreen = document.getElementById('name-screen');
@@ -498,7 +375,7 @@ nextQuestionButton.addEventListener('click', () => {
         resultScreen.classList.remove('hidden');
         
         // Sonuçları göster
-        resultText.textContent = `Sayın ${quizState.studentName}, quizden ${quizState.score} doğru...`;
+        resultText.textContent = `Sayın ${quizState.studentName}, Quizden ${quizQuestions.length} sorudan ${quizState.score} doğru...`;
         scoreText.textContent = `Puanınız: %${((quizState.score / quizQuestions.length) * 100).toFixed(0)}`;
         
         // Log ve kayıt fonksiyonunu ekleyelim
