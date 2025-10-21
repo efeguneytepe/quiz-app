@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenci Quiz Uygulaması</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div id="app" class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <div id="name-screen">
+            <h1 class="text-2xl font-bold mb-4 text-center">Quiz Başlangıç</h1>
+            <input 
+                type="text" 
+                id="student-name" 
+                placeholder="Adınızı girin" 
+                class="w-full p-2 border rounded mb-4"
+            >
+            <button 
+                id="start-quiz"
+                class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+            >
+                Quize Başla
+            </button>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <h2 id="question-header" class="text-xl font-semibold mb-4"></h2>
+            <div id="question-container" class="mb-4">
+                <p id="question-text" class="text-lg font-medium mb-2"></p>
+                <div id="options-container" class="grid grid-cols-2 gap-2"></div>
+            </div>
+            <button 
+                id="next-question"
+                disabled
+                class="w-full p-2 rounded bg-gray-300 text-gray-500 cursor-not-allowed"
+            >
+                Sonraki Soru
+            </button>
+        </div>
+
+        <div id="result-screen" class="hidden text-center">
+            <h2 class="text-2xl font-bold mb-4">Quiz Tamamlandı!</h2>
+            <p id="result-text" class="text-xl mb-4"></p>
+            <p id="score-text" class="text-lg mb-6"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

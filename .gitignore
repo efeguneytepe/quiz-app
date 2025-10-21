@@ -1,0 +1,16 @@
+# Bağımlılıklar (çok büyük ve gereksiz)
+node_modules/
+
+# Gizli ayarlar ve şifreler
+.env
+
+# PM2 logları ve ayarları
+.pm2/
+/root/.pm2/logs/
+/root/.pm2/pids/
+
+# NPM debug logları
+npm-debug.log*
+
+# Sunucuya özel log dosyaları
+*.log
