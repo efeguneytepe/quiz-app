@@ -3,7 +3,19 @@ from pymongo import MongoClient
 import random
 import datetime
 import sys
+import os
+from dotenv import load_dotenv
 
+# .env dosyasını yükle (bu script ile aynı klasörde olmalı)
+load_dotenv() 
+
+# MONGODB_URI değişkenini ortamdan oku
+CONNECTION_STRING = os.getenv("MONGODB_URI")
+
+# Eğer .env dosyasında MONGODB_URI bulunamazsa hata ver ve çık
+if not CONNECTION_STRING:
+    print("HATA: .env dosyasında MONGODB_URI bulunamadı veya dosya yüklenemedi.")
+    sys.exit(1)
 # --- Ayarlar (Burayı kontrol et) ---
 CONNECTION_STRING = "mongodb+srv://efe:efeali99@cluster0.32a1qcm.mongodb.net/quiz-app?retryWrites=true&w=majority&appName=Cluster0"
 DB_NAME = "quiz-app"
