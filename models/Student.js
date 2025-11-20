@@ -8,8 +8,8 @@ const StudentSchema = new mongoose.Schema({
     },
     totalScore: {
         type: Number,
-        required: true, // Zorunlu alan
-        min: 0 // Minimum 0 olabilir
+        required: true, 
+        min: 0 
     },
     totalQuestions: {
         type: Number,
@@ -22,6 +22,15 @@ const StudentSchema = new mongoose.Schema({
     questionScores: {
         type: Map,
         of: Number,
+        default: {}
+    },
+    typeAnalysis: {
+        type: Map,
+        of: new mongoose.Schema({
+            correct: Number,
+            total: Number,
+            successRate: String // "%75" gibi
+        }, { _id: false }), // Alt şema için ID oluşturmasın
         default: {}
     }
 }, { 
